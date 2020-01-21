@@ -97,3 +97,13 @@ nav {
 #regions, option{
     font-size: 15px;
 }
+
+
+#output {
+    margin-top: 15vh;
+}
+
+ul {
+    list-style: none;
+    line-height: 25px;
+}
