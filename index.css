@@ -49,8 +49,16 @@ header{
     font-weight: 500;
 }
 
+#moon>a {
+    text-decoration: none;
+    color: hsl(0, 0%, 0%);
+    font-weight: 600;
+}
+
 .far {
     transform: rotate(-30deg);
+    color: hsl(0, 0%, 52%);
+    font-size: 14px;
 }
 
 nav {
@@ -79,6 +87,7 @@ nav {
     top: 27.2%;
     left: 4%;
     right: 2%;
+    color: hsl(0, 0%, 52%);
 }
 
 #region {
@@ -96,4 +105,64 @@ nav {
 
 #regions, option{
     font-size: 15px;
+}
+
+
+#output {
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.countryCard {
+    width: 280px;
+    height: 390px;
+    margin: auto;
+    margin-bottom: 40px;
+    background-color: #fff;
+    box-shadow: 0px 1px 40px 1px rgba(255, 255, 255, 0.1);
+}
+
+.countryCard>img {
+    object-fit: cover;
+    width: 280px;
+    height: 160px;
+}
+
+.countryCard>ul {
+    padding: 30px 0px 0px 23px;
+    line-height: 30px;
+    list-style: none;
+}
+
+li.name {
+    padding-bottom: 17px;
+    font-weight: 800;
+}
+
+@media screen and (max-width: 480px) {
+    #text-intro>h3 {
+        margin-left: 15px;
+        font-size: 16px;
+    }
+
+    #moon {
+        font-size: 15px;
+    }
+
+    .search {
+        width: 100%;
+        text-indent: 35px;
+    }
+
+    .fas.fa-search {
+    position: absolute;
+    top: 32.2%;
+    left: 3%;
+    right: 2%;
+    color: hsl(0, 0%, 52%);
+    
+    }
+
 }
