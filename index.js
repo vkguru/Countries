@@ -28,15 +28,18 @@ function displayContent(listedCountries) {
                 <li><strong>Region:</strong> ${listedCountries[i].region}</li> 
                 <li><strong>Capital:</strong> ${listedCountries[i].capital}</li>
             </ul>
+        </div>
         `;
     }
     document.querySelector('#output').innerHTML = display;
 
-    document.querySelectorAll('.countryCard').forEach((card) => {
-        card.addEventListener('click', (event) => {
+    document.querySelectorAll('.countryCard').forEach((countryCard) => {
+        countryCard.addEventListener('click', (event) => {
             sessionStorage.setItem('country', event.currentTarget.dataset.country);
             window.location = 'country.html'
         })
+        countryCard.width = "33%";
+        countryCard.height = "33%";
     });
 
     /*function filterCountries() {
