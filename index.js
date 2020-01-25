@@ -36,18 +36,28 @@ function displayContent(listedCountries) {
     document.querySelectorAll('.countryCard').forEach((countryCard) => {
         countryCard.addEventListener('click', (event) => {
             sessionStorage.setItem('country', event.currentTarget.dataset.country);
-            window.location = 'country.html'
+            window.location = '#'
         })
-        countryCard.width = "33%";
-        countryCard.height = "33%";
     });
 
-    /*function filterCountries() {
-        let filtereist = [];
-        for (let i = 0; i < countries.length; i++) {
-            if (re)
+    function filterCountries() {
+        let filteredCountries = [];
+        for(let i = 0; i < listedCountries.length; i++) {
+            if (regionList.value === listedCountries[i].region ||  regionList.value === 'all'){
+                filteredCountries.push(listedCountries[i]);
+                displayContent(filteredCountries);
+            }
         }
-    }*/
+    }
     
+    regionList.addEventListener('change', filterCountries);
 
+    function countrySearch() {
+            let searchResult = listedCountries.filter(country => {
+                const regex = new RegExp(`${searchInput.value}`, 'gi');
+                return country.name.match(regex);
+            })
+            displayContent(searchResult);        
+    }
+    searchInput.addEventListener('input', countrySearch);
 }
